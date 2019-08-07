@@ -6,11 +6,11 @@
 //CREATE SERVER
 const express = require('express');
 const server = express();
+//IMPORT ROUTES
+const routes = require('./routes');
 
-//GET REQUISITION'S
-server.get('/',(req,res)=>{
-    res.send('server start');
-});
+//LISTEN ROUTES
+server.use(routes);
 
 //SERVER OPEN PORT
 server.listen(3333);
