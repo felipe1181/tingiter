@@ -3,13 +3,13 @@
 * Routes server
 */
 const express = require('express');
+const developerController = require('./Controllers/developerController');
+
 const routes = express.Router();
 
 //REQUISITION'S ON SERVER
 
 //CREATE NEW DEVELOPER
-routes.post('/newdev',(req,res)=>{
-    res.json({message:'server start'});
-});
+routes.post('/developer',developerController.store);
 
 module.exports = routes;
