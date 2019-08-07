@@ -6,6 +6,7 @@
 //CREATE SERVER
 const express = require('express');
 const mongoose = require('mongoose');
+const cors = require('cors');
 const server = express();
 
 //CONNECT DATABASE
@@ -15,6 +16,7 @@ mongoose.connect('mongodb+srv://tingiter:tingiter@1181@cluster0-lccbc.mongodb.ne
 const routes = require('./routes');
 
 //LISTEN ROUTES
+server.use(cors());
 server.use(express.json());
 server.use(routes);
 

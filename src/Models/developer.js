@@ -17,7 +17,15 @@ const developerSchema = new Schema({
     avatar:{
         type:String,
         required:true
-    }
+    },
+    likes:[{
+        type: Schema.Types.ObjectId,
+        ref: "developer"
+    }],
+    deslikes:[{
+        type: Schema.Types.ObjectId,
+        ref: "developer"
+    }]
 },{
     timestamps:true //createAt updateAt
 });
